@@ -52,7 +52,7 @@ export default {
                    slug: this.smoothie.slug,
                }).then(() => {
                    this.$router.push({ name: 'home' }).catch(err => {
-                       console.log(err)
+                       alert(err)
                    })
                })
            } else {
@@ -80,7 +80,7 @@ export default {
            res.forEach(doc => {
                this.smoothie = { ...doc.data(), id: doc.id }
            })
-       }).catch(err => console.log(err))
+       }).catch(err => alert(err))
     }
 }
 </script>

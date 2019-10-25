@@ -47,15 +47,14 @@ export default {
                    replacement: '-',
                    remove: /[$*_+~.()'"!-:@]/g,
                    lower: true,
-               })
-               console.log(this.slug)
+               });
                db.collection('Smoothies').add({
                    title: this.title,
                    ingredients: this.ingredients,
                    slug: this.slug,
                }).then(() => {
                    this.$router.push({ name: 'home' }).catch(err => {
-                       console.log(err)
+                       alert(err)
                    })
                })
            } else {
